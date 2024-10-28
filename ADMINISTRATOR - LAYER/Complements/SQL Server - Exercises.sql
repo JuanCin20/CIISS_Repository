@@ -692,7 +692,7 @@ ORDER BY
 	MONTH(Fecha_Movimiento_Inventario) ASC
 END;
 
-EXECUTE SP_CHART_01;
+----EXECUTE SP_CHART_01;
 
 GO
 	CREATE
@@ -740,7 +740,7 @@ ORDER BY
 	MONTH(Fecha_Movimiento_Inventario) ASC
 END;
 
-EXECUTE SP_CHART_02;
+----EXECUTE SP_CHART_02;
 
 GO
 	CREATE
@@ -757,124 +757,64 @@ GROUP BY
 
 END;
 
-EXECUTE SP_CHART_03;
+----EXECUTE SP_CHART_03;
 
 GO
 	CREATE
-	OR ALTER PROCEDURE SP_CHART_04 AS BEGIN DECLARE @Min_Date DATETIME;
-
-DECLARE @Max_Date DATETIME;
-
-SET
-	@Min_Date = (
-		SELECT
-			MIN(Fecha_Movimiento_Inventario)
-		FROM
-			Tabla_Movimiento_Inventario
-	);
-
-SET
-	@Max_Date = (
-		SELECT
-			MAX(Fecha_Movimiento_Inventario)
-		FROM
-			Tabla_Movimiento_Inventario
-	);
-
+	OR ALTER PROCEDURE SP_CHART_04 AS BEGIN
 SELECT
-	Nombre_Insumo,
-	COUNT(*) AS [Number_Transaction]
+	TCI.Nombre_Categoria_Insumo,
+	TI.Nombre_Insumo,
+	TI.Stock_Insumo
 FROM
-	Tabla_Movimiento_Inventario
+	Tabla_Insumo TI
+	INNER JOIN Tabla_Categoria_Insumo TCI ON TI.ID_Categoria_Insumo = TCI.ID_Categoria_Insumo
 WHERE
-	Tipo_Movimiento_Inventario = 'Salida'
-	AND Nombre_Categoria_Insumo = 'Ingredientes para la Masa'
-	AND Fecha_Movimiento_Inventario BETWEEN @Min_Date
-	AND @Max_Date
+	TCI.Nombre_Categoria_Insumo = 'Aceites y Vinagres'
 GROUP BY
-	Nombre_Insumo
-ORDER BY
-	COUNT(ID_Insumo) DESC
+	TCI.Nombre_Categoria_Insumo,
+	TI.Nombre_Insumo,
+	TI.Stock_Insumo
 END;
 
-EXECUTE SP_CHART_04;
+----EXECUTE SP_CHART_04;
 
 GO
 	CREATE
-	OR ALTER PROCEDURE SP_CHART_05 AS BEGIN DECLARE @Min_Date DATETIME;
-
-DECLARE @Max_Date DATETIME;
-
-SET
-	@Min_Date = (
-		SELECT
-			MIN(Fecha_Movimiento_Inventario)
-		FROM
-			Tabla_Movimiento_Inventario
-	);
-
-SET
-	@Max_Date = (
-		SELECT
-			MAX(Fecha_Movimiento_Inventario)
-		FROM
-			Tabla_Movimiento_Inventario
-	);
-
+	OR ALTER PROCEDURE SP_CHART_05 AS BEGIN
 SELECT
-	Nombre_Insumo,
-	COUNT(*) AS [Number_Transaction]
+	TCI.Nombre_Categoria_Insumo,
+	TI.Nombre_Insumo,
+	TI.Stock_Insumo
 FROM
-	Tabla_Movimiento_Inventario
+	Tabla_Insumo TI
+	INNER JOIN Tabla_Categoria_Insumo TCI ON TI.ID_Categoria_Insumo = TCI.ID_Categoria_Insumo
 WHERE
-	Tipo_Movimiento_Inventario = 'Salida'
-	AND Nombre_Categoria_Insumo = 'Salsas'
-	AND Fecha_Movimiento_Inventario BETWEEN @Min_Date
-	AND @Max_Date
+	TCI.Nombre_Categoria_Insumo = 'Bebidas'
 GROUP BY
-	Nombre_Insumo
-ORDER BY
-	COUNT(ID_Insumo) DESC
+	TCI.Nombre_Categoria_Insumo,
+	TI.Nombre_Insumo,
+	TI.Stock_Insumo
 END;
 
-EXECUTE SP_CHART_05;
+----EXECUTE SP_CHART_05;
 
 GO
 	CREATE
-	OR ALTER PROCEDURE SP_CHART_06 AS BEGIN DECLARE @Min_Date DATETIME;
-
-DECLARE @Max_Date DATETIME;
-
-SET
-	@Min_Date = (
-		SELECT
-			MIN(Fecha_Movimiento_Inventario)
-		FROM
-			Tabla_Movimiento_Inventario
-	);
-
-SET
-	@Max_Date = (
-		SELECT
-			MAX(Fecha_Movimiento_Inventario)
-		FROM
-			Tabla_Movimiento_Inventario
-	);
-
+	OR ALTER PROCEDURE SP_CHART_06 AS BEGIN
 SELECT
-	Nombre_Insumo,
-	COUNT(*) AS [Number_Transaction]
+	TCI.Nombre_Categoria_Insumo,
+	TI.Nombre_Insumo,
+	TI.Stock_Insumo
 FROM
-	Tabla_Movimiento_Inventario
+	Tabla_Insumo TI
+	INNER JOIN Tabla_Categoria_Insumo TCI ON TI.ID_Categoria_Insumo = TCI.ID_Categoria_Insumo
 WHERE
-	Tipo_Movimiento_Inventario = 'Salida'
-	AND Nombre_Categoria_Insumo = 'Quesos'
-	AND Fecha_Movimiento_Inventario BETWEEN @Min_Date
-	AND @Max_Date
+	TCI.Nombre_Categoria_Insumo = 'Carnes'
 GROUP BY
-	Nombre_Insumo
-ORDER BY
-	COUNT(ID_Insumo) DESC
+	TCI.Nombre_Categoria_Insumo,
+	TI.Nombre_Insumo,
+	TI.Stock_Insumo
 END;
 
-EXECUTE SP_CHART_06;
+----EXECUTE SP_CHART_06;

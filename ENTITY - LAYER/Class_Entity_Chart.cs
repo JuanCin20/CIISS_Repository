@@ -21,17 +21,20 @@
 
         /**/
 
+        public string Nombre_Categoria_Insumo_01 { get; set; }
         public string Nombre_Insumo_01 { get; set; }
-        public int Number_Transaction_01 { get; set; }
+        public int Stock_Insumo_01 { get; set; }
 
         /**/
 
+        public string Nombre_Categoria_Insumo_02 { get; set; }
         public string Nombre_Insumo_02 { get; set; }
-        public int Number_Transaction_02 { get; set; }
+        public int Stock_Insumo_02 { get; set; }
 
         /**/
 
+        public string Nombre_Categoria_Insumo_03 { get; set; }
         public string Nombre_Insumo_03 { get; set; }
-        public int Number_Transaction_03 { get; set; }
+        public int Stock_Insumo_03 { get; set; }
     }
 }

@@ -54,7 +54,7 @@ $(document).ready(function () {
                     datasets: [
                         {
                             label: "N\xb0 Transacciones de Salida",
-                            backgroundColor: "rgb(128, 128, 128)",
+                            backgroundColor: "rgb(0, 0, 180)",
                             data: Array_02,
                         }
                     ]
@@ -76,18 +76,194 @@ $(document).ready(function () {
         },
     });
 
-    var Chart_02 = document.getElementById("Chart_02");
+    jQuery.ajax({
+        // ? url: "@Url.Action("Home_Controller_Chart_02", "Home")",
+        url: "https://localhost:44320/Home/Home_Controller_Chart_02",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=UTF-8",
+        success: function (data) {
 
-    var Chart_02_Alter = new Chart(Chart_02, {
-        type: "pie",
-        data: {
-            labels: ["Blue", "Red", "Yellow", "Green"],
-            datasets: [
-                {
-                    data: [12.21, 15.58, 11.25, 8.32],
-                    backgroundColor: ["#007BFF", "#DC3545", "#FFC107", "#28A745"],
+            var Array_01 = [];
+            var Array_02 = [];
+
+            for (var i = 0; i < data.data.length; i++) {
+                Array_01.push(data.data[i].Month_Name_Alter)
+                Array_02.push(data.data[i].Exit_Number)
+            }
+
+            var Chart_02 = document.getElementById("Chart_02");
+
+            var Chart_02_Alter = new Chart(Chart_02, {
+                type: "bar",
+                data: {
+                    labels: Array_01,
+                    datasets: [
+                        {
+                            label: "N\xb0 Transacciones de Entrada",
+                            backgroundColor: "rgb(128, 0, 0)",
+                            data: Array_02,
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        },
+                    }
                 }
-            ]
+            });
+        },
+        error: function (error) {
+            alert(error);
+        },
+    });
+
+    jQuery.ajax({
+        // ? url: "@Url.Action("Home_Controller_Chart_03", "Home")",
+        url: "https://localhost:44320/Home/Home_Controller_Chart_03",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=UTF-8",
+        success: function (data) {
+
+            var Array_01 = [];
+            var Array_02 = [];
+
+            for (var i = 0; i < data.data.length; i++) {
+                Array_01.push(data.data[i].Nombre_Categoria_Insumo)
+                Array_02.push(data.data[i].Number_Stock)
+            }
+
+            var Chart_03 = document.getElementById("Chart_03");
+
+            var Chart_03_Alter = new Chart(Chart_03, {
+                type: "pie",
+                data: {
+                    labels: Array_01,
+                    datasets: [
+                        {
+                            data: Array_02,
+                            backgroundColor: ["rgb(255, 255, 205)", "rgb(255, 205, 155)", "rgb(255, 205, 205)", "rgb(255, 155, 205)", "rgb(255, 205, 255)", "rgb(205, 155, 255)", "rgb(205, 205, 255)", "rgb(155, 205, 255)", "rgb(205, 255, 255)", "rgb(155, 255, 205)", "rgb(205, 255, 205)", "rgb(205, 255, 155)"],
+                        }
+                    ]
+                },
+            });
+        },
+        error: function (error) {
+            alert(error);
+        },
+    });
+
+    jQuery.ajax({
+        // ? url: "@Url.Action("Home_Controller_Chart_04", "Home")",
+        url: "https://localhost:44320/Home/Home_Controller_Chart_04",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=UTF-8",
+        success: function (data) {
+
+            var Array_01 = [];
+            var Array_02 = [];
+
+            for (var i = 0; i < data.data.length; i++) {
+                Array_01.push(data.data[i].Nombre_Insumo_01)
+                Array_02.push(data.data[i].Stock_Insumo_01)
+            }
+
+            var Chart_04 = document.getElementById("Chart_04");
+
+            var Chart_04_Alter = new Chart(Chart_04, {
+                type: "pie",
+                data: {
+                    labels: Array_01,
+                    datasets: [
+                        {
+                            data: Array_02,
+                            backgroundColor: ["rgb(255, 255, 205)", "rgb(255, 205, 155)"],
+                        }
+                    ]
+                },
+            });
+        },
+        error: function (error) {
+            alert(error);
+        },
+    });
+
+    jQuery.ajax({
+        // ? url: "@Url.Action("Home_Controller_Chart_05", "Home")",
+        url: "https://localhost:44320/Home/Home_Controller_Chart_05",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=UTF-8",
+        success: function (data) {
+
+            var Array_01 = [];
+            var Array_02 = [];
+
+            for (var i = 0; i < data.data.length; i++) {
+                Array_01.push(data.data[i].Nombre_Insumo_02)
+                Array_02.push(data.data[i].Stock_Insumo_02)
+            }
+
+            var Chart_05 = document.getElementById("Chart_05");
+
+            var Chart_05_Alter = new Chart(Chart_05, {
+                type: "pie",
+                data: {
+                    labels: Array_01,
+                    datasets: [
+                        {
+                            data: Array_02,
+                            backgroundColor: ["rgb(255, 205, 205)", "rgb(255, 155, 205)", "rgb(255, 205, 255)"],
+                        }
+                    ]
+                },
+            });
+        },
+        error: function (error) {
+            alert(error);
+        },
+    });
+
+    jQuery.ajax({
+        // ? url: "@Url.Action("Home_Controller_Chart_06", "Home")",
+        url: "https://localhost:44320/Home/Home_Controller_Chart_06",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=UTF-8",
+        success: function (data) {
+
+            var Array_01 = [];
+            var Array_02 = [];
+
+            for (var i = 0; i < data.data.length; i++) {
+                Array_01.push(data.data[i].Nombre_Insumo_03)
+                Array_02.push(data.data[i].Stock_Insumo_03)
+            }
+
+            var Chart_06 = document.getElementById("Chart_06");
+
+            var Chart_06_Alter = new Chart(Chart_06, {
+                type: "pie",
+                data: {
+                    labels: Array_01,
+                    datasets: [
+                        {
+                            data: Array_02,
+                            backgroundColor: ["rgb(205, 155, 255)", "rgb(205, 205, 255)", "rgb(155, 205, 255)", "rgb(205, 255, 255)", "rgb(155, 255, 205)", "rgb(205, 255, 205)"],
+                        }
+                    ]
+                },
+            });
+        },
+        error: function (error) {
+            alert(error);
         },
     });
 

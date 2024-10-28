@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\HP\\Documentos\\CIISS - INVENTORY MANAGEMENT\\CIISS - INVENTORY MANAGEMENT\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{BF8F2A7E-5022-4C3D-A931-ADCA55648E84}|ADMINISTRATOR - LAYER\\ADMINISTRATOR - LAYER.csproj|c:\\users\\hp\\documentos\\ciiss - inventory management\\ciiss - inventory management\\administrator - layer\\scripts\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BF8F2A7E-5022-4C3D-A931-ADCA55648E84}|ADMINISTRATOR - LAYER\\ADMINISTRATOR - LAYER.csproj|solutionrelative:administrator - layer\\scripts\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.js",
-              "DocumentMoniker": "C:\\Users\\HP\\Documentos\\CIISS - INVENTORY MANAGEMENT\\CIISS - INVENTORY MANAGEMENT\\ADMINISTRATOR - LAYER\\Scripts\\js\\Index.js",
-              "RelativeDocumentMoniker": "ADMINISTRATOR - LAYER\\Scripts\\js\\Index.js",
-              "ToolTip": "C:\\Users\\HP\\Documentos\\CIISS - INVENTORY MANAGEMENT\\CIISS - INVENTORY MANAGEMENT\\ADMINISTRATOR - LAYER\\Scripts\\js\\Index.js",
-              "RelativeToolTip": "ADMINISTRATOR - LAYER\\Scripts\\js\\Index.js",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAwE4AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-28T02:26:48.415Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

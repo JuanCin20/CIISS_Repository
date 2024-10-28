@@ -129,8 +129,9 @@ namespace DATA___LAYER
                         {
                             Obj_List_Class_Entity_Chart.Add(new Class_Entity_Chart()
                             {
+                                Nombre_Categoria_Insumo_01 = Obj_SqlDataReader["Nombre_Insumo"].ToString(),
                                 Nombre_Insumo_01 = Obj_SqlDataReader["Nombre_Insumo"].ToString(),
-                                Number_Transaction_01 = Convert.ToInt32(Obj_SqlDataReader["Number_Transaction"])
+                                Stock_Insumo_01 = Convert.ToInt32(Obj_SqlDataReader["Number_Transaction"])
                             });
                         }
                     }
@@ -162,8 +163,9 @@ namespace DATA___LAYER
                         {
                             Obj_List_Class_Entity_Chart.Add(new Class_Entity_Chart()
                             {
+                                Nombre_Categoria_Insumo_02 = Obj_SqlDataReader["Nombre_Insumo"].ToString(),
                                 Nombre_Insumo_02 = Obj_SqlDataReader["Nombre_Insumo"].ToString(),
-                                Number_Transaction_02 = Convert.ToInt32(Obj_SqlDataReader["Number_Transaction"])
+                                Stock_Insumo_02 = Convert.ToInt32(Obj_SqlDataReader["Number_Transaction"])
                             });
                         }
                     }
@@ -195,8 +197,9 @@ namespace DATA___LAYER
                         {
                             Obj_List_Class_Entity_Chart.Add(new Class_Entity_Chart()
                             {
+                                Nombre_Categoria_Insumo_03 = Obj_SqlDataReader["Nombre_Insumo"].ToString(),
                                 Nombre_Insumo_03 = Obj_SqlDataReader["Nombre_Insumo"].ToString(),
-                                Number_Transaction_03 = Convert.ToInt32(Obj_SqlDataReader["Number_Transaction"])
+                                Stock_Insumo_03 = Convert.ToInt32(Obj_SqlDataReader["Number_Transaction"])
                             });
                         }
                     }
