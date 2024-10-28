@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sistema de Inventario</title>
+    @Styles.Render("~/Bundle/Style")
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!--Navbar Brand-->
+        <a class="navbar-brand ps-3" href="@Url.Action("Index", "Home")">Sistema de Inventario</a>
+        <!--Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <!--Navbar-->
+        <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false"><i class="fa-solid fa-user"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    @{
+                        if (ViewData["E_Mail_Usuario"] != null)
+                        {
+                            <li><a class="dropdown-item" href="#">@ViewData["E_Mail_Usuario"]</a></li>
+                        }
+                    }
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="@Url.Action("Access_Controller_Log_Out", "Access")">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Home</div>
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-gauge"></i></div>
+                            Dashboard
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Personal</div>
+                        <a class="nav-link" href="@Url.Action("User", "Staff")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                            Usuarios
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Mantenimiento</div>
+                        <a class="nav-link" href="@Url.Action("Category", "Management")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-table"></i></div>
+                            Categorías de Insumos
+                        </a>
+                        <a class="nav-link" href="@Url.Action("Supplier", "Management")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                            Proveedores de Insumos
+                        </a>
+                        <a class="nav-link" href="@Url.Action("Supply", "Management")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                            Insumos
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    @{
+                        if (ViewData["Nombre_Apellido_String"] != null)
+                        {
+                            <div class="small">Sesión Iniciada Como:</div>
+                            @ViewData["Nombre_Apellido_String"]
+                        }
+                    }
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    @RenderBody()
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">&copy; @DateTime.Now.Year Tec-Samples</div>
+                        <div>
+                            <a href="@Url.Action("Privacy", "Home")">Política de Privacidad</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    @Scripts.Render("~/Bundle/Script")
+    @RenderSection("Java_Script", required: false)
+</body>
+</html>
